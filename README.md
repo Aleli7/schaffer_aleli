@@ -1,5 +1,4 @@
-# schaffer_aleli
-Título: Curso de programacion full stack
+# Título: Curso de programacion full stack
 - Subtitulo: Comisión A o B según corresponda
 - Encabezado: Silicon Misiones - https://siliconmisiones.gob.ar/
 - Autor: nombre y apellido del estudiante
