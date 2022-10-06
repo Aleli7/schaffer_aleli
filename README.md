@@ -1,4 +1,4 @@
-< h1 > Curso de programacion full stack </ h1 >
+# Curso de programacion full stack
  Comisión A 
 -----------
 
