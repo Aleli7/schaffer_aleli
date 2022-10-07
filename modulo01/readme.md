@@ -23,6 +23,7 @@ document.writeln("Hola Mundo!");
 </body>
 </html>
 
+
 Ejercicio 2:
 Copiar el siguiente código dentro de un archivo, luego guardarlo con el nombre:
 “Ejercicio2.html”. Ejecuta el programa en el navegador.
@@ -43,6 +44,7 @@ alert (`La división de A/B es: ${resultado=A/B} ` );
 </body>
 </html>
 
+
 Ejercicio 3:
 Copiar el siguiente código dentro de un archivo, luego guardarlo con el nombre:
 “Ejercicio3.html”. Ejecuta el programa en el navegador.
@@ -60,6 +62,7 @@ alert (`El segundo numero ahora es ${num2} ` );
 </script>
 </body>
 </html>
+
 
 Ejercicio 4:
 Copiar el siguiente código dentro de un archivo, luego guardarlo con el nombre:
