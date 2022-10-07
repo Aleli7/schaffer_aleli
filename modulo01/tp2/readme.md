@@ -12,7 +12,7 @@ elementos numéricos.
 #### Ejercicio 2:
 Completar las condiciones de los if del siguiente script para que los mensajes se muestren
 siempre de forma correcta:
-var num1 = 3;
+##########var num1 = 3;
 var num2 = 7;
 if(...) {
 console.log("num1 no es mayor que num2");
