@@ -12,16 +12,16 @@ script"
 g) Agregar comentarios que expliquen el funcionamiento del código.
 
 <!DOCTYPE html>
-<html>
-<head>
-<title>Ejercicio 1 </title>
-</head>
-<body>
-<script>
-document.writeln("Hola Mundo!");
-</script>
-</body>
-</html>
+ <html>
+ <head>
+ <title>Ejercicio 1 </title>
+ </head>
+ <body>
+ <script>
+ document.writeln("Hola Mundo!");
+ </script>
+ </body>
+ </html>
 
 
 Ejercicio 2:
