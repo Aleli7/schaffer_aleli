@@ -67,17 +67,9 @@ FROM sistema.empleados INNER JOIN sistema.departamentos ON empleados.id_departam
 ORDER BY departamentos.nombre, empleados.apellido, empleados.nombre;
 
 -- 22. Devuelve un listado con el código y el nombre del departamento, solamente de aquellos departamentos que tienen empleados.
-SELECT departamentos.iddepartamento, departamentos.nombre FROM departamentos WHERE iddepartamento 
-IN (SELECT DEPARTAMENTOS FROM EMPLEADOS GROUP BY DEPARTAMENTOS HAVING COUNT(*)> 0);
-
--- ejemplo
-SELECT Nombre
-FROM DEPARTAMENTOS
-WHERE Codigo IN (
- SELECT Departamento
- FROM EMPLEADOS
- GROUP BY Departamento
- HAVING COUNT(*) > 2 )
+SELECT departamentos.iddepartamento, departamentos.nombre FROM sistema.empleados
+INNER JOIN sistema.departamentos ON departamentos.iddepartamento = empleados.id_departamento
+WHERE empleados.id_departamento IS NOT NULL;
 
 -- 23. Devuelve el nombre del departamento donde trabaja el empleado que tiene el cuit 27-38382980-3.
 SELECT empleados.nombre, empleados.cuil_cuit, departamentos.nombre AS Departamento

@@ -158,6 +158,9 @@ ORDER BY MAX(clientes.categoría) DESC;
 -- cantidades el mismo día. Se pide que se calcule cuál es el pedido de máximo valor para cada
 -- uno de los días en los que un cliente ha realizado un pedido. Muestra el identificador del
 -- cliente, nombre, apellido, la fecha y el valor de la cantidad.
+SELECT clientes.nombre, MAX(pedidos.id) FROM ventas.clientes
+INNER JOIN ventas.pedidos ON clientes.id = pedidos.id_cliente 
+GROUP BY pedidos.id_cliente;
 
 
 -- 31.Calcula cuál es el máximo valor de los pedidos realizados durante el mismo día para cada uno
