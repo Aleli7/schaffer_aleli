@@ -195,10 +195,8 @@ WHERE pedidos.fecha LIKE '%2020%'
 GROUP BY clientes.id;
 
 -- 35.Devuelve cuál ha sido el pedido de máximo valor que se ha realizado cada año.
-SELECT MAX(pedidos.cantidad), clientes.nombre, clientes.apellido, clientes.id
-FROM ventas.clientes
-INNER JOIN ventas.pedidos ON clientes.id = pedidos.id_cliente 
-WHERE pedidos.fecha LIKE '%2020%';
+SELECT MAX(pedidos.cantidad) FROM ventas.pedidos
+GROUP BY YEAR(pedidos.fecha);
 
 --36.Devuelve el número total de pedidos que se han realizado cada año.
 SELECT COUNT(pedidos.id) FROM ventas.pedidos
