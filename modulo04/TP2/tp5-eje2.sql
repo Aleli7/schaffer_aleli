@@ -242,7 +242,7 @@ WHERE vendedores.id NOT IN (SELECT id_vendedor FROM ventas.pedidos);
 -- NOT EXISTS).
 SELECT * FROM ventas.clientes
 WHERE NOT EXISTS (SELECT id_cliente FROM ventas.pedidos 
-WHERE clientes.id = pedidos.id_clientes);
+WHERE clientes.id = pedidos.id_cliente);
 
 -- 44.Devuelve un listado de los vendedores que no han realizado ningún pedido. (Utilizando
 -- EXISTS o NOT EXISTS).
