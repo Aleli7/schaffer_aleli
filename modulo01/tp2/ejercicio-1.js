@@ -18,7 +18,7 @@ valores.forEach((elem) => {
 
 alert(numbers);
 
-function suma (array){
+function suma (numbers){
     return valores + 7;
 };
 
