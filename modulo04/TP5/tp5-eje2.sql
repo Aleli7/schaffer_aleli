@@ -39,30 +39,30 @@ SELECT DISTINCT clientes.nombre FROM ventas.clientes WHERE clientes.nombre LIKE 
 -- 11.Devuelve un listado con el identificador, nombre y apellido de todos los clientes que han
 --realizado algún pedido. El listado debe estar ordenado alfabéticamente y se deben eliminar
 --los elementos repetidos.
-SELECT clientes.id, clientes.nombre, clientes.apellido FROM ventas.clientes
+SELECT DISTINCT clientes.id, clientes.nombre, clientes.apellido FROM ventas.clientes
 INNER JOIN ventas.pedidos ON clientes.id = pedidos.id_cliente
-WHERE pedidos.id >= 1;
+WHERE pedidos.id_cliente NOT NULL;
 
 -- 12.Devuelve un listado que muestre todos los pedidos que ha realizado cada cliente. El resultado
 --debe mostrar todos los datos de los pedidos y del cliente. El listado debe mostrar los datos de
 --los clientes ordenados alfabéticamente.
 SELECT * FROM ventas.clientes
 INNER JOIN ventas.pedidos ON clientes.id = pedidos.id_cliente
-WHERE pedidos.id >= 1 ORDER BY clientes.nombre, clientes.apellido, clientes.cuitcuil ASC;
+WHERE pedidos.id_cliente >= 1 ORDER BY clientes.nombre, clientes.apellido, clientes.cuitcuil ASC;
 
 -- 13.Devuelve un listado que muestre todos los pedidos en los que ha participado un vendedor. El
 --resultado debe mostrar todos los datos de los pedidos y de los vendedores. El listado debe
 --mostrar los datos de los vendedores ordenados alfabéticamente.
 SELECT * FROM ventas.clientes
 INNER JOIN ventas.pedidos ON clientes.id = pedidos.id_cliente
-WHERE pedidos.id_vendedor >= 1 ORDER BY pedidos;
+WHERE pedidos.id_vendedor NOT NULL ORDER BY pedidos;
 
 -- 14.Devuelve un listado que muestre todos los clientes, con todos los pedidos que han realizado y
 --con los datos de los vendedores asociados a cada pedido.
 SELECT * FROM ventas.clientes
 INNER JOIN ventas.pedidos ON clientes.id = pedidos.id_cliente 
 INNER JOIN ventas.vendedores ON pedidos.id_vendedor = vendedores.id
-WHERE pedidos.id_vendedor >= 1 
+WHERE pedidos.id_vendedor NOT NULL
 ORDER BY vendedores.nombre, vendedores.apellido, vendedores.cuitcuil ASC;
 
 --15.Devuelve un listado de todos los clientes que realizaron un pedido durante el año 2022, cuyo
@@ -91,30 +91,26 @@ WHERE vendedores.nombre = 'Daniel' AND vendedores.apellido = 'Sáez';
 -- realizado. Este listado también debe incluir los clientes que no han realizado ningún pedido.
 -- El listado debe estar ordenado alfabéticamente por el apellido y nombre de los clientes.
 SELECT * FROM ventas.clientes
-INNER JOIN ventas.pedidos ON clientes.id = pedidos.id_cliente 
-INNER JOIN ventas.vendedores ON pedidos.id_vendedor = vendedores.id
-WHERE pedidos.id >= 0 ORDER BY clientes.apellido, clientes.nombre ASC;
+LEFT JOIN ventas.pedidos ON clientes.id = pedidos.id_cliente 
+ORDER BY clientes.apellido, clientes.nombre ASC;
 
 -- 19.Devuelve un listado con todos los vendedores junto con los datos de los pedidos que han
 -- realizado. Este listado también debe incluir los vendedores que no han realizado ningún
 -- pedido. El listado debe estar ordenado alfabéticamente por el apellido y nombre de los
 -- vendedores.
-SELECT vendedores.nombre, vendedores.apellido, pedidos.id, pedidos.cantidad, pedidos.fecha 
-FROM ventas.clientes
-INNER JOIN ventas.pedidos ON clientes.id = pedidos.id_cliente 
-INNER JOIN ventas.vendedores ON pedidos.id_vendedor = vendedores.id
-WHERE pedidos.id IS NOT NULL ORDER BY vendedores.apellido, vendedores.nombre ASC;
+SELECT * FROM ventas.vendedores
+LEFT JOIN ventas.pedidos ON vendedores.id = pedidos.id_vendedor
+ORDER BY vendedores.apellido, vendedores.nombre ASC;
 
 -- 20.Devuelve un listado que solamente muestre los clientes que no han realizado ningún pedido.
 SELECT * FROM ventas.clientes
-INNER JOIN ventas.pedidos ON clientes.id = pedidos.id_cliente 
-WHERE pedidos.id IS NULL;
-
+LEFT JOIN ventas.pedidos ON clientes.id = pedidos.id_cliente 
+WHERE pedidos.id_cliente IS NULL;
 -- 21.Devuelve un listado que solamente muestre los vendedores que no han realizado ningún
 -- pedido.
 SELECT * FROM ventas.vendedores
-INNER JOIN ventas.pedidos ON pedidos.id_vendedor = vendedores.id
-WHERE pedidos.id IS NOT NULL;
+LEFT JOIN ventas.pedidos ON pedidos.id_vendedor = vendedores.id
+WHERE pedidos.id_vendedor IS NULL;
 
 -- 22.Devuelve un listado con los clientes que no han realizado ningún pedido y de los vendedores
 -- que no han participado en ningún pedido. Ordene el listado alfabéticamente por el apellido y
