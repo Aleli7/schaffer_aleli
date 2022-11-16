@@ -119,16 +119,13 @@ WHERE pedidos.id IS NOT NULL;
 -- 22.Devuelve un listado con los clientes que no han realizado ningún pedido y de los vendedores
 -- que no han participado en ningún pedido. Ordene el listado alfabéticamente por el apellido y
 -- el nombre. En el listado deberá diferenciar de algún modo los clientes y los vendedores.
-SELECT clientes.nombre, clientes.apellido, vendedores.nombre, vendedores.apellido 
-FROM ventas.clientes
-INNER JOIN ventas.pedidos ON clientes.id = pedidos.id_cliente 
-INNER JOIN ventas.vendedores ON pedidos.id_vendedor = vendedores.id
-WHERE pedidos.id IS NULL;
+SELECT vendedores.nombre AS nombre, vendedores.apellido AS apellido, ' ' AS clientes_id, vendedor.id AS vendedor_id
+FROM pedidos RIGHT JOIN vendedores ON vendedores.id = pedidos.id_vendedor
+WHERE pedidos.id_vendedor IS NULL 
 UNION
-SELECT clientes.nombre, clientes.apellido, clientes.id AS cliente_id '' FROM ventas.pedidos
-RIGHT JOIN ventas.clientes ON ventas.pedidos.id-ventas.clientes.id
-WHERE pedidos.id_cliente IS NULL
-ORDER BY cliente.apellido, clientes.nombre ASC;
+SELECT clientes.nombre AS nombre, clientes.apellido AS apellido, clientes.id AS clientes_id, ' ' AS vendedor_id
+FROM pedidos RIGHT JOIN clientes ON clientes.id = pedidos.id_cliente
+WHERE pedidos.id_cliente IS NULL ORDER BY apellido, nombre ASC;
 
 -- 23.Calcula la cantidad total que suman todos los pedidos que aparecen en la tabla pedido.
 SELECT SUM(pedidos.id) FROM ventas.pedidos;
