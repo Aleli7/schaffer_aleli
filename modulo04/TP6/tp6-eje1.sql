@@ -220,16 +220,7 @@ INSERT INTO movimientos VALUES (5, 3, '2022-01-07', 5, 5, 5, 1,'2022-09-15 07:07
 -- ● un pais que tenga al menos 3 localidades.
  
 UPDATE movimientos SET estado = 0 WHERE movimientos.id = 1 OR movimientos.id = 2;
-
-WITH duplicados (nombre, id, repetidos )
-AS
-(   SELECT nombre, id, ROW_NUMBER()
-        OVER( PARTITION BY nombre, id
-        ORDER BY nombre, id ) AS repetidos
-    FROM paises  INNER JOIN provincias ON paises.id = provincias.idpais
-INNER JOIN localidades ON provincias.id = localidades.id_provincia WHERE localidades.estado = 1
-)
-UPDATE duplicados SET duplicados = 'NULL' WHERE repetidos = 3;
+UPDATE paises SET nombre = 'NULL' WHERE id = 1;
 
 -- 15. Modificar el campo stock de la tabla productos teniendo en cuenta la cantidad de la tabla
 -- de movimientos. Sumar el stock si es un ingreso, restar si es un egreso. Esto hacerlo de
