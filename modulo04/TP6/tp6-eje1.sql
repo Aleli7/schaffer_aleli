@@ -192,7 +192,6 @@ INSERT INTO vendedores VALUES (5, 'Franco', 'Sager', '21-34757483-7', 2);
 
 -- 12. Modificar la tabla movimientos y agregar los campos: id_producto fk, estado,
 -- tms(timestamp), tipo_movimiento (ingreso, egreso, pedido)
-ALTER TABLE movimientos ADD id_producto FOREGIN KEY REFERENCES productos(id);
 ALTER TABLE movimientos ADD tms TIMESTAMP;
 ALTER TABLE movimientos ADD id_producto INT;
 ALTER TABLE movimientos ADD CONSTRAINT fk_id_productos FOREIGN KEY (id_producto) REFERENCES productos(id);
