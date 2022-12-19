@@ -7,10 +7,12 @@
             "disponible": 20,
             "precio": 9800,
             "temporada": "Verano 2023",
-            "Características": {
+            "Características": [ 
+                {
                 "color": "negro",
                 "marco": "metal"
-            }
+                }
+            ]
         },
         {
             "id_producto": 191,
@@ -18,10 +20,12 @@
             "marca": "Timer",
             "disponible": 2,
             "precio": 21400,
-            "Características": {
+            "Características": [ 
+                {
                 "color": "plateado",
                 "material": "goma y plástico"
-            }
+                }
+            ]
         },
         {
             "id_producto": 148,
@@ -29,10 +33,12 @@
             "marca": "Piecito",
             "disponible": 38,
             "precio": 500,
-            "Características": {
+            "Características": [
+               {
                 "color": "varios",
                 "material": "algodon"
-            }
+               }
+            ]
         },
         {
             "id_producto": 82,
