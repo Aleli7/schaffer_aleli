@@ -1,4 +1,4 @@
-[
+{ "Personas": [
     {
     "Nombre": "Pedro",
     "Apellido": "Guzman",
@@ -35,3 +35,4 @@
     "Localidad": "Posadas"
 }
 ]
+}
