@@ -1,51 +1,42 @@
 {
-    "departamentos": [
+    "Departamentos": [
         {
-            "Contabilidad": [
-                {
-                    "id_empleado": 10,
-                    "nombre": "Juan Segovia"
-                },
-                {
-                    "id_empleado": 15,
-                    "nombre": "Ramiro Romero"
-                }
-            ]
+            "departamento": "Contabilidad",
+            "id_empleado": 10,
+            "nombre": "Juan Segovia"
         },
         {
-            "Tecnología": [
-                {
-                    "id_empleado": 12,
-                    "nombre": "Pablo Richmon",
-                    "puesto": "PM"
-                },
-                {
-                    "id_empleado": 23,
-                    "nombre": "Marta Fernandez",
-                    "puesto": "TechLead"
-                },
-                {
-                    "id_empleado": 24,
-                    "nombre": "Pedro Mendez",
-                    "puesto": "FullStack JS"
-                }
-            ]
+            "departamento": "Contabilidad",
+            "id_empleado": 15,
+            "nombre": "Ramiro Romero"
+        },     
+        {
+            "departamento": "Tecnología",
+            "id_empleado": 12,
+            "nombre": "Pablo Richmon",
+            "puesto": "PM"
         },
         {
-            "Producción": [
-                {
-                    "id_empleado": 7,
-                    "nombre": "Gabriela Lescano"
-                }
-            ]
+            "departamento": "Tecnología",
+            "id_empleado": 23,
+            "nombre": "Marta Fernandez",
+            "puesto": "TechLead"
         },
         {
-            "Comercial": [
-                {
-                    "id_empleado": 2,
-                    "nombre": "Fabiana Martinez"
-                }
-            ]
+            "departamento": "Tecnología",
+            "id_empleado": 24,
+            "nombre": "Pedro Mendez",
+            "puesto": "FullStack JS"
+        },
+        {
+            "departamento": "Producción",
+            "id_empleado": 7,
+            "nombre": "Gabriela Lescano"
+        },
+        {
+            "departamento": "Comercial",
+            "id_empleado": 2,
+            "nombre": "Fabiana Martinez"
         }
     ]
 }
