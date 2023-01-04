@@ -248,26 +248,9 @@ CREATE TABLE `parametros` (
 -- "3732538,75"},"2020":{"ingreso": "27442665,12","egreso": "8522331,82"},"2021": {"ingreso":
 -- "31634912,57","egreso": "9757142,66"}}}
 -- Nota: Rellenar a criterio los campos id, tms,id_usuario
-INSERT INTO parametros (id) VALUES (1);
-INSERT INTO parametros (id) VALUES (2);
-INSERT INTO parametros (id) VALUES (3);
-INSERT INTO parametros (id) VALUES (4);
-INSERT INTO parametros (id) VALUES (5);
 
-INSERT INTO parametros (id_usuario) VALUES (1);
-INSERT INTO parametros (id_usuario) VALUES (2);
-INSERT INTO parametros (id_usuario) VALUES (3);
-INSERT INTO parametros (id_usuario) VALUES (4);
-INSERT INTO parametros (id_usuario) VALUES (5);
-
-INSERT INTO `parametros` (cosas) VALUES (
-'{"idDeLaCosa": 101, "permisos": "PUT, GET"}'
-'{"vistasPermitidas":"menuPrincipal,menuSecundario,ventas,estadisticaVentas,listaCliente",
-“grupo": "ventas"}'
-'{"zonaHoraria": "America/Argentina/BuenosAires"}'
-'{"fechaInicioActividades": 01/01/2019, "mesAperturaCaja": "Enero", "mesCierreCaja":
-"Diciembre"}'
-'{"balancesAniosAnteriores": {"2019": {"ingreso": "7374901.93","egreso":
-"3732538,75"},"2020":{"ingreso": "27442665,12","egreso": "8522331,82"},"2021": {"ingreso":
-"31634912,57","egreso": "9757142,66"}}}'
-);
+INSERT INTO parametros (id, cosas, id_usuario) VALUES (1, '{"idDeLaCosa": 101, "permisos": "PUT, GET"}', 1);
+INSERT INTO parametros (id, cosas, id_usuario) VALUES (2, '{"vistasPermitidas": "menuPrincipal,menuSecundario,ventas,estadisticaVentas,listaCliente", "grupo": "ventas"}', 2);
+INSERT INTO parametros (id, cosas, id_usuario) VALUES (3, '{"zonaHoraria": "America/Argentina/BuenosAires"}', 3);
+INSERT INTO parametros (id, cosas, id_usuario) VALUES (4, '{"fechaInicioActividades":"01/01/2019", "mesAperturaCaja":"Enero", "mesCierreCaja":"Diciembre"}', 4);
+INSERT INTO parametros (id, cosas, id_usuario) VALUES (5, '{"balancesAniosAnteriores": {"2019": {"ingreso": "7374901,93","egreso": "3732538,75"}, "2020": {"ingreso": "27442665,12", "egreso": "8522331,82"}, "2021": {"ingreso": "31634912,57", "egreso": "9757142,66"}}}', 5);
