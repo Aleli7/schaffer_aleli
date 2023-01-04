@@ -1,0 +1,12 @@
+{
+    "server":{
+        "port":8080
+    },
+    "database": {
+        "host": "127.0.0.1",
+        "user": "root",
+        "password": "aleli7",
+        "database": "alpha-silicon-01",
+        "port": 3306
+}
+}
