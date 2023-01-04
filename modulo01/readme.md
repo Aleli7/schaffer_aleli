@@ -22,4 +22,4 @@ bootstrap
 React.js
 Async await
 ```
- Click [aquí](https://docs.google.com/presentation/d/17ehuTds8qZfrXiIrFAHkyKtiVWgQ-goWBrnyHaMzMkc/edit?usp=sharing) para ver el **material didáctico**
+ Click en la estrella para ver el material didáctico [ ⭐ ](https://docs.google.com/presentation/d/17ehuTds8qZfrXiIrFAHkyKtiVWgQ-goWBrnyHaMzMkc/edit?usp=sharing)
