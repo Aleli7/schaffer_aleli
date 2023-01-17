@@ -2,24 +2,24 @@ require("rootpath")();
 const express = require('express');
 const app = express();
 
-const personaDb = require("../datasource/personaDB.js");
+const sedeDB = require("../datasource/sedeDB.js");
 
 
 app.get('/', getAll);
 
-app.get('/:dni', getByDni);
+app.get('/:idsede', getByIdsede);
 
 app.post('/', create);
 
-app.put('/:dni', update);
+app.put('/:idsede', update);
 
-app.delete('/del/:dni', eliminar);
+app.delete('/del/:sede', eliminar);
 
-app.delete('/:idpersona', eliminacionlogica);
+app.delete('/:idsede', eliminacionlogica);
 
-// Metododo para listar todas las personas 
+// Metododo para listar todas las sedes
 function getAll(req, res) {
-    personaDb.getAll(function (err, result) {
+    sedeDB.getAll(function (err, result) {
         if (err) {
             res.status(500).send(err);
         } else {
@@ -27,9 +27,9 @@ function getAll(req, res) {
         }
     });
 }
-// Metodo para buscar personas por su dni
-function getByDni(req, res) {
-    personaDb.getByDni(req.params.dni,function (err, result) {
+// Metodo para buscar sedes por su id
+function getByIdsede(req, res) {
+    sedeDB.getByIdsede(req.params.idsede,function (err, result) {
         if (err) {
             res.status(500).send(err);
         } else {
@@ -37,9 +37,9 @@ function getByDni(req, res) {
         }
     });
 }
-// Metodo para agregar personas
+// Metodo para agregar sede
 function create(req, res) {
-    personaDb.create(req.body, function (err, result) {
+    sedeDB.create(req.body, function (err, result) {
         if (err) {
             res.status(500).send(err);
         } else {
@@ -47,9 +47,9 @@ function create(req, res) {
         }
     });
 }
-// Metodo para modificar personas
+// Metodo para modificar personaas
 function update(req, res) {
-    personaDb.update(req.params.dni, req.body, function (result) {
+    sedeDB.update(req.params.idsede, req.body, function (result) {
         if (result.code == 3) {
             res.status(500).send(err);
         } else if (result.code == 2) {
@@ -59,9 +59,9 @@ function update(req, res) {
         }
     });
 }
-// Metodo par eliminar fisicmente personas de la base de datos
+// Metodo par eliminar fisicmente sedes de la base de datos
 function eliminar(req, res) {
-    personaDb.delete(req.params.dni,  function (err, result) {
+    sedeDB.delete(req.params.idsede,  function (err, result) {
         if (err) {
             res.status(500).send(err);
         } else {
@@ -73,9 +73,9 @@ function eliminar(req, res) {
         }
     });
 }
-// Metodo par eliminar personas cambiando el estado a 0
+// Metodo par eliminar sedes cambiando el estado a 0
 function eliminacionlogica(req, res) {
-    personaDb.logdelete(req.params.idpersona, function (result) {
+    sedeDB.logdelete(req.params.idsede, function (result) {
         if (result.code == 3) {
             res.status(500).send(err);
         } else if (result.code == 2) {
