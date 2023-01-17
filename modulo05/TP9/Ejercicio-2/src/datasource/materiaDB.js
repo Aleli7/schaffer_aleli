@@ -103,13 +103,13 @@ materiaDB.update = function (idmateria, materia, funCallback) {
             if (result.affectedRows == 0) {
                 funCallback({
                     code: 2,
-                    message: `No se encontro el usuario ${idmateria}`,
+                    message: `No se encontro el usuario la materia buscada`,
                     detail: result
                 });
             } else {
                 funCallback({
                     code: 1,
-                    message: `Se modifico el usuario ${materia.nombre}`,
+                    message: `Se modifico la materia con id ${materia.idmateria}`,
                     detail: result
                 });
             }
@@ -131,7 +131,7 @@ materiaDB.logdelete = function (idmateria, funCallback) {
             if (result.affectedRows == 0) {
                 funCallback({
                     code:2,
-                    message: `La materia con id ${idmateria} no existe`,
+                    message: `La materia con id buscada no existe`,
                     detail: result
                 }); 
             } else {
