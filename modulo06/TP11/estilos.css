@@ -1,0 +1,54 @@
+.encabezado {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    background-color: darkblue;
+    border: 2px solid rgb(22, 22, 33);
+    margin: 0px;
+}
+
+.imgcabecera {
+    position: absolute;
+    left: 20px;
+    height: 45px;
+    vertical-align: middle;
+}
+
+.menu {
+    padding: 5px;
+    text-align: center;
+    background-color: #e4e4e4;
+}
+
+.menu-item {
+    border: 1px solid gray;
+    padding: 5px;
+    font-size: 25px;
+    color: darkblue;
+}
+
+h1 {
+    background-color: #e4e4e4;
+    margin: 0px;
+}
+
+button {
+    font-size: 18px;
+    line-height: 34px;
+    height: 36px;
+}
+
+table, tr, th, td {
+    border-collapse: collapse;
+    font-size: 20px;
+    border: 1px solid black; 
+}
+
+th{
+    background-color: #e4e4e4;
+}
+
+table {
+    width: 70%;
+    margin: auto;
+}
