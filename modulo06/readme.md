@@ -30,5 +30,8 @@ Async await
 [**Clase Nº 40 - 06/02/2023**](https://www.youtube.com/watch?v=LR-pxriSpK8)  
 [**Clase Nº 41 - 08/02/2023**](https://www.youtube.com/watch?v=vbVCy7DLSMk)  
 [**Clase Nº 42 - 13/02/2023**](https://www.youtube.com/watch?v=O95IqqnCXZI)  
+[**Clase Nº 43 - 15/02/2023**](https://www.youtube.com/watch?v=ClkXLwTcwrw)  
+[**Clase Nº 44 - 22/02/2023**](https://www.youtube.com/watch?v=UV6c5OTP8kM) 
+
 
 
